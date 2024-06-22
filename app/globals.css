@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --media-brand: 245 245 245;
+  --media-focus: 78 156 246;
+}
+
 .button {
   @apply bg-cyan-500 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/20 hover:text-cyan-400 duration-300;
 }
@@ -11,9 +16,9 @@
 }
 
 .text-grad {
-  @apply bg-gradient-to-r w-max bg-clip-text text-transparent from-cyan-400 via-white to-white
+  @apply bg-gradient-to-r w-max bg-clip-text text-transparent from-cyan-400 via-white to-white;
 }
 
 .b {
-  color: #27272a
+  color: #27272a;
 }

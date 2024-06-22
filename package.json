@@ -15,7 +15,9 @@
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
     "@react-spring/web": "^9.7.3",
+    "@vidstack/react": "^1.11.24",
     "clsx": "^2.1.1",
+    "media-icons": "^1.1.4",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18"

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+// Base styles for media player and provider (~400B).
+import "@vidstack/react/player/styles/base.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
