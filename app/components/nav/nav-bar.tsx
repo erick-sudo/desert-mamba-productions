@@ -7,6 +7,7 @@ import { useSpring, animated } from "@react-spring/web";
 import Link from "next/link";
 import React, { useState } from "react";
 import BreadCrumbs from "../bread-crumbs";
+import Image from "next/image";
 
 const tabs = [
   { title: "Documentaries", path: "" },
@@ -36,8 +37,14 @@ export function NavBar() {
     <div className="sticky top-4 z-50">
       <div className="flex text-white text-sm items-center container mx-auto gap-4 p-2 backdrop-blur">
         <div className="flex items-center gap-2">
-          <PlusIcon height={24} />
-          <span>DMP Logo</span>
+          <div>
+            {/* <Image
+              height={120}
+              width={120}
+              alt="Desert Mamba"
+              src="/images/logo.png"
+            /> */}
+          </div>
         </div>
 
         {/* Large Screen */}

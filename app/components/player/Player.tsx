@@ -39,7 +39,11 @@ const textTracks = [
   },
 ] as const;
 
-export function Player() {
+interface PlayerProps {
+  className?: string;
+}
+
+export function Player({ className }: PlayerProps) {
   const player = useRef<MediaPlayerInstance>(null);
 
   function onCanPlay(
@@ -60,9 +64,9 @@ export function Player() {
   }
 
   return (
-    <div className="">
+    <div className={`${className}`}>
       <MediaPlayer
-        className="w-full aspect-video bg-zinc-700 text-white rounded-lg"
+        className="w-full aspect-video bg-zinc-700 text-white overflow-hidden rounded-lg ring-media-focus data-[focus]:ring-4"
         title="Sprite Fight"
         src="https://files.vidstack.io/sprite-fight/720p.mp4"
         crossOrigin

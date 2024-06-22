@@ -28,7 +28,7 @@ export interface MediaButtonProps {
 }
 
 export const buttonClass =
-  "group ring-media-focus relative inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-md outline-none ring-inset hover:bg-cyan-500/20 data-[focus]:ring-4";
+  "group ring-media-focus relative inline-flex p-1 cursor-pointer items-center justify-center rounded-md outline-none ring-inset hover:bg-cyan-500/20 data-[focus]:ring-4";
 
 export const buttonIconClass = "w-6 h-6 text-cyan-500";
 

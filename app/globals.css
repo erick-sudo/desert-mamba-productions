@@ -19,6 +19,25 @@
   @apply bg-gradient-to-r w-max bg-clip-text text-transparent from-cyan-400 via-white to-white;
 }
 
-.b {
-  color: #27272a;
+.vertical-scrollbar {
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+}
+
+.horizontal-scrollbar {
+  overflow-x: scroll;
+}
+
+.vertical-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar {
+  height: 5px;
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-thumb,
+.vertical-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(34 211 238);
+  border-radius: 10px;
 }
