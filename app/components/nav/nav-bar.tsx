@@ -1,25 +1,29 @@
 "use client";
 
 import { ButtonGroup } from "../ButtonGroup";
-import { PlusIcon } from "@heroicons/react/24/outline";
 import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useSpring, animated } from "@react-spring/web";
 import Link from "next/link";
 import React, { useState } from "react";
 import BreadCrumbs from "../bread-crumbs";
-import Image from "next/image";
+import { NavButton } from "./nav-button";
+import { usePathname } from "next/navigation";
 
 const tabs = [
-  { title: "Documentaries", path: "" },
-  { title: "Live Stream", path: "" },
-  { title: "Podcasts", path: "about" },
-  { title: "Shows", path: "projects" },
-  { title: "Comedy", path: "articles" },
+  { title: "Home", path: "" },
+  { title: "Explore", path: "content" },
+  { title: "Documentaries", path: "content/documentaries" },
+  { title: "Music", path: "content/music" },
+  { title: "Live Stream", path: "content/live" },
+  { title: "Podcasts", path: "content/podcasts" },
+  { title: "Shows", path: "content/projects" },
+  { title: "Comedy", path: "content/comedy" },
 ];
 
 export function NavBar() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  const pathName = usePathname();
 
   const popUpSprings = useSpring({
     from: {
@@ -34,8 +38,8 @@ export function NavBar() {
   });
 
   return (
-    <div className="sticky top-4 z-50">
-      <div className="flex text-white text-sm items-center container mx-auto gap-4 p-2 backdrop-blur">
+    <>
+      <div className="flex sticky top-0 text-white text-sm items-center container mx-auto gap-4 p-2">
         <div className="flex items-center gap-2">
           <div>
             {/* <Image
@@ -63,7 +67,7 @@ export function NavBar() {
         <div className="flex-grow lg:hidden flex justify-end">
           <button
             onClick={() => setOpenDrawer(true)}
-            className="p-2 ring-1 ring-stone-500/20 text-stone-500 rounded cyan-hover duration-300"
+            className="ring-1 p-1 ring-zinc-700 rounded text-zinc-400 cyan-hover"
           >
             <Bars4Icon className="" height={24} />
           </button>
@@ -72,28 +76,37 @@ export function NavBar() {
       {/* Small Screen Popup */}
       <animated.div
         style={{ ...popUpSprings }}
-        className="lg:hidden fixed z-50 flex flex-col bg-stone-800/30 backdrop-blur border border-stone-800 top-2 bottom-4 right-4 rounded"
+        className="lg:hidden fixed z-50 flex flex-col border-zinc-800 bg-white/10 backdrop-blur-md ring-1 ring-white/30 top-1.5 bottom-1.5 right-1.5 rounded"
       >
-        <div className="flex p-2 justify-end w-72">
+        <div className="flex justify-between items-center p-2 w-72">
+          <h3 className="p-2 text-cyan-400 font-bold">DMP</h3>
           <button
             onClick={() => setOpenDrawer(false)}
-            className="p-1 ring-1 rounded ring-stone-500/20 text-stone-500 cyan-hover duration-300"
+            className="p-1 ring-1 rounded ring-zinc-500/20 text-zinc-500 cyan-hover duration-300"
           >
             <XMarkIcon className="" height={20} />
           </button>
         </div>
-        <div className="grid gap-2 p-4">
-          {tabs.map((tab, index) => (
-            <Link
-              className="rounded px-4 py-2 text-sm text-white cyan-hover hover:bg-stone-900/20 duration-300 flex items-center"
-              key={index}
-              href={tab.path}
-            >
-              {tab.title}
-            </Link>
-          ))}
+        <div className="grid gap-2 p-2">
+          {tabs.map((tab, index) => {
+            const active = pathName.startsWith(`/${tab.path}`);
+            return (
+              <Link key={index} href={tab.path}>
+                <NavButton
+                  className={`rounded w-full  ${
+                    active
+                      ? "bg-zinc-950/50 ring-1 ring-inset ring-cyan-400/50 hover:bg-black duration-300"
+                      : "cyan-hover"
+                  }`}
+                  text={tab.title}
+                  active={active}
+                  hideText={false}
+                />
+              </Link>
+            );
+          })}
         </div>
-        <div className="p-2 flex flex-col justify-end flex-grow">
+        <div className="p-1 flex flex-col justify-end flex-grow">
           <button className="rounded w-full p-2 button">Login</button>
         </div>
       </animated.div>
@@ -101,6 +114,6 @@ export function NavBar() {
       <div className="container mx-auto px-4 mt-2">
         <BreadCrumbs />
       </div>
-    </div>
+    </>
   );
 }

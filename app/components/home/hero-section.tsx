@@ -8,17 +8,17 @@ export function HeroSection() {
   return (
     <div>
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2">
-          <div className="py-6 px-4 grid gap-16">
+        <div className="grid">
+          <div className="p-4 grid">
             <div className="text-5xl md:text-6xl xl:text-7xl text-white font-extrabold py-6">
               <div className="text-cyan-500">Unleashing Creativity</div>
               <div>in the Heart of the Desert</div>
             </div>
-            <div className="text-white text-lg max-w-lg">
+            <div className="text-white text-lg max-w-lg mt-6">
               Stream, Watch and Download Quality Entertainment Content that
               suits you.
             </div>
-            <div className="">
+            <div className="mt-4">
               <button className="cyan-hover bg-cyan-500 py-3 min-w-64 rounded group flex gap-2 justify-center">
                 <span>Dicover Now</span>
                 <span className="inline-block transition-transform group-hover:translate-x-4 motion-reduce:transform-none">
@@ -27,8 +27,7 @@ export function HeroSection() {
               </button>
             </div>
           </div>
-          <div className="h-[60vh] relative grid grid-cols-4 gap-4 p-4">
-            {/* Section Nav */}
+          {/* <div className="h-[60vh] relative grid grid-cols-4 gap-4 p-4">
             <div className="absolute z-40 top-1/2 left-0 right-0 flex justify-center">
               <ButtonGroup
                 className="flex bg-white/10 rounded-full p-2 border border-white/10 backdrop-blur"
@@ -100,7 +99,7 @@ export function HeroSection() {
                 objectFit="cover"
               />
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="flex justify-end p-4 gap-4">
           <SocialMediaLinks />

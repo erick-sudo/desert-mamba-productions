@@ -29,7 +29,12 @@ export default function NewReleases() {
   return (
     <div className="">
       <div className="container mx-auto px-4 py-12">
-        <h4 className="text-4xl text-grad">New Releases For You</h4>
+        <div className="py-2 flex justify-between">
+          <h4 className="text-lg text-grad">New Releases For You</h4>
+          <button className="px-4 text-cyan-400 hover:text-white duration-300">
+            View More
+          </button>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
           {newReleases.map((release, index) => (
             <div key={index} className="">
@@ -48,9 +53,6 @@ export default function NewReleases() {
               </div>
             </div>
           ))}
-        </div>
-        <div className="border-b py-2 border-cyan-500">
-          <button className="button px-4 py-2 rounded">More Releases</button>
         </div>
       </div>
     </div>

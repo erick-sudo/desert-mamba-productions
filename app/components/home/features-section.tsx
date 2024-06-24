@@ -29,8 +29,8 @@ export default function FeaturesSection() {
             </button>
           </div>
         </div>
-        <div className="min-h-[50vh] relative m-4">
-          {/* Left */}
+        {/* <div className="min-h-[50vh] relative m-4">
+          
           <div className="rounded overflow-hidden absolute left-4 -top-4 bottom-[60%] right-[65%]">
             <Image
               alt=""
@@ -47,7 +47,7 @@ export default function FeaturesSection() {
               objectFit="cover"
             />
           </div>
-          {/* Right */}
+          
           <div className="rounded overflow-hidden absolute left-[65%] -top-4 bottom-[60%] right-4">
             <Image
               alt=""
@@ -72,7 +72,7 @@ export default function FeaturesSection() {
               objectFit="cover"
             />
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/*  */}
@@ -154,8 +154,8 @@ export default function FeaturesSection() {
             </button>
           </div>
         </div>
-        <div className="min-h-[50vh] relative max-w-xl my-8">
-          {/* Center */}
+        {/* <div className="min-h-[50vh] relative max-w-xl my-8">
+          
           <div className="rounded overflow-hidden absolute left-24 right-24 top-8 bottom-0">
             <Image
               alt=""
@@ -180,7 +180,7 @@ export default function FeaturesSection() {
               objectFit="cover"
             />
           </div>
-          {/* Right */}
+          
           <div className="rounded overflow-hidden absolute right-0 top-12 h-64 w-64">
             <Image
               alt=""
@@ -189,7 +189,7 @@ export default function FeaturesSection() {
               objectFit="cover"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
